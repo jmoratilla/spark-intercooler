@@ -14,7 +14,8 @@ public class TodoList {
 
         exception(Exception.class, (e, req, res) -> e.printStackTrace()); // print all exceptions
         staticFiles.location("/public");
-        port(9999);
+        int serverPort = Integer.parseInt(System.getenv("PORT"));
+        port(serverPort);
 
         get("/",                        (req, res)      -> renderTodos(req));
         get("/todos/:id/edit",          (req, res)      -> renderEditTodo(req));
