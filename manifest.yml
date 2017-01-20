@@ -1,0 +1,10 @@
+---
+- name: jmoratilla-myapp
+  memory: 256M
+  disk_quota: 512M
+  path: ./
+  buildpack: java-buildpack
+  host: jmoratilla-myapp
+  domain: eu-gb.mybluemix.net
+  command: mvn exec:java -Dexec.mainClass="BasicTodoList"
+  timeout: 80
